@@ -30,7 +30,7 @@ describe('Testando página de Login', () => {
   })
   })
 
-  describe('Testando o carrinho de compras', () => {
+  describe('Testando página home', () => {
   beforeEach(() => {
     cy.login()
     cy.get('#add-to-cart-sauce-labs-backpack').click()
@@ -104,7 +104,24 @@ describe('Testando página de Login', () => {
     cy.url().should('include','/inventory.html') 
   })
 })
-  describe('BUG-001 - Compra sem itens no carrinho', () => {
+  describe('Realizando teste de menu lateral', () => {
+    beforeEach(() => {
+    cy.login()
+  })
+    it('deve navegar para a página "sobre" da saucelabs', () => {
+      cy.get('#react-burger-menu-btn').click()
+      cy.get('#about_sidebar_link').click()
+
+      cy.url().should('eq', 'https://saucelabs.com/')
+  })
+      it('deve realizar o logout e retornar a página de login', () => {
+      cy.get('#react-burger-menu-btn').click()
+      cy.get('#logout_sidebar_link').click()
+
+      cy.url().should('eq', 'https://www.saucedemo.com/')
+  })
+})
+  describe('BUG-001 - Usuário realiza uma compra mesmo com o carrinho vazio', () => {
     beforeEach(() => {
     cy.login()
   })
