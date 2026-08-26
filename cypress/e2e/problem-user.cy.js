@@ -36,21 +36,48 @@ cy.visit('https://www.saucedemo.com/')
     })
     it('deve adicionar um item no carrinho', () => {
         cy.contains('button','Add to cart').click()
-        cy.get('.shopping_cart_link').click()
+        cy.get('.shopping_cart_link').click() //Entra no carrinho para verificar se o item está lá
     })
-    it.only('deve adicionar mais de um item no carrinho', () => {
+    it('deve adicionar mais de um item no carrinho', () => {
         cy.get('#add-to-cart-sauce-labs-backpack').click()
         cy.get('#add-to-cart-sauce-labs-bike-light').click()
         cy.get('.shopping_cart_link').click()
     })
-        it('deve adicionar item no carrinho, entrar no carrinho e remover item', () => {
-        cy.contains('button','Add to cart').click()
-        cy.get('.shopping_cart_link').click()
+        it('deve adicionar mais de um item no carrinho, entrar no carrinho e remover item', () => {
+        cy.get('#add-to-cart-sauce-labs-backpack').click()
+        cy.get('#add-to-cart-sauce-labs-bike-light').click()
+        cy.get('.shopping_cart_link').click() //Entra no carrinho para verificar se o item está lá
 
-        cy.get('[data-test="inventory-item"]').should('be.visible')
-        cy.contains('button', 'Remove').click()
+        cy.get('[data-test="inventory-item-name"]')
+        .should('have.length', 2)
+
+        cy.get('[data-test="inventory-item-name"]')
+        .contains('Sauce Labs Backpack')
+        .should('be.visible')
+
+        cy.get('#remove-sauce-labs-backpack').click()
         
-        cy.get('[data-test="inventory-item"]').should('not.exist')
+        cy.get('[data-test="inventory-item"]')
+        .contains('Sauce Labs Backpack')
+        .should('not.exist')
+
+        cy.get('[data-test="inventory-item-name"]').should('have.length', '1')
+    })
+      it.only('deve adicionar apenas um item no carrinho, entrar no carrinho e remover item', () => {
+      cy.get('#add-to-cart-sauce-labs-backpack').click()
+      cy.get('.shopping_cart_link').click() //Entra no carrinho para verificar se o item está lá
+
+      cy.get('[data-test="inventory-item-name"]')
+      .should('have.length', 1)
+
+      cy.get('[data-test="inventory-item-name"]')
+      .contains('Sauce Labs Backpack')
+      .should('be.visible')
+
+      cy.get('#remove-sauce-labs-backpack').click()
+        
+      cy.get('[data-test="inventory-item"]')
+      .should('not.exist')
     })
   })
 })
