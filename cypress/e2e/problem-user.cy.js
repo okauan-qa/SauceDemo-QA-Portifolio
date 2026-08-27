@@ -63,7 +63,7 @@ cy.visit('https://www.saucedemo.com/')
 
         cy.get('[data-test="inventory-item-name"]').should('have.length', '1')
     })
-      it.only('deve adicionar apenas um item no carrinho, entrar no carrinho e remover item', () => {
+      it('deve adicionar apenas um item no carrinho, entrar no carrinho e remover item', () => {
       cy.get('#add-to-cart-sauce-labs-backpack').click()
       cy.get('.shopping_cart_link').click() //Entra no carrinho para verificar se o item está lá
 
@@ -79,5 +79,16 @@ cy.visit('https://www.saucedemo.com/')
       cy.get('[data-test="inventory-item"]')
       .should('not.exist')
     })
+
+    it.only('deve adicionar todos itens da lista no carrinho', () => {
+      cy.get('[data-test^="add-to-cart"]') //seleciona todos botões que tem add-to-cart
+      .should('have.length.gt', 2) // deve ter mais de dois itens
+      .click({ multiple: true }) // clica em multiplos
+
+
+      cy.get('[data-test^="add-to-cart"]')
+      .should('have.length', 0) //Resultado deveria ser 0, porém o cypress retornou que tem 3 botões com o status "Add to cart"
+    })
+
   })
 })
