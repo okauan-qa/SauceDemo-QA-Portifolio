@@ -99,6 +99,11 @@ cy.visit('https://www.saucedemo.com/')
           .select('lohi')
           .should('have.value', 'lohi') //Resultado deveria ordenar a lista do menor para o maior preço, porém permance A - Z BUG-003
       })
+      it('Deve ordenar produtos do maior para o menor preço', () => {
+      cy.get('[data-test="product-sort-container"]')
+      .select('hilo')
+      .should('have.value', 'hilo') //Resultado deveria ordenar a lista do maior para o menor preço, porém permance A - Z BUG-004
+    })
 
   })
 })
