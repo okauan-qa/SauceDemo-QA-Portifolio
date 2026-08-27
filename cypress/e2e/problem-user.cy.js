@@ -87,12 +87,12 @@ cy.visit('https://www.saucedemo.com/')
 
 
       cy.get('[data-test^="add-to-cart"]')
-      .should('have.length', 0) //Resultado deveria ser 0, porém o cypress retornou que tem 3 botões com o status "Add to cart"
+      .should('have.length', 0) //Resultado deveria ser 0, porém o cypress retornou que tem 3 botões com o status "Add to cart" BUG-001
     })
       it.only('deve ordenar a lista de A a Z', () => {
       cy.get('[data-test="product-sort-container"]')
       .select("za")
-      .should('have.value', 'za')
+      .should('have.value', 'za') //Resultado deveria ordenar a lista para Z - A, porém permance A - Z BUG-002
     })
 
   })
