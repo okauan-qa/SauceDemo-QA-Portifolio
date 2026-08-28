@@ -80,5 +80,5 @@ O usuário pode acreditar que adicionou todos os produtos desejados, mas alguns 
 
 ## Evidências anexadas
 
-- Screenshot da execução com falha no Cypress.
-- Vídeo da reprodução do cenário.
+- [Screenshot da falha no Cypress](../evidencias/images/problem-userBUG-001.png)
+- [Vídeo da reprodução do defeito](../evidencias/images/problem-userBUG-001.mp4)

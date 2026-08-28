@@ -80,5 +80,5 @@ O usuário não consegue utilizar a ordenação de produtos de Z a A. Isso dific
 
 ## Evidências anexadas
 
-- Screenshot da falha do Cypress.
-- Vídeo da reprodução do cenário.
+- [Screenshot da falha no Cypress](../evidencias/images/problem-userBUG-002.png)
+- [Vídeo da reprodução do defeito](../evidencias/images/problem-userBUG-002.mp4)
