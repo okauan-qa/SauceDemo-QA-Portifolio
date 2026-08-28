@@ -105,7 +105,7 @@ describe('Testando página home', () =>{
       .select('hilo')
       .should('have.value', 'hilo') //Resultado deveria ordenar a lista do maior para o menor preço, porém permance A - Z BUG-004
     })
-    it.only('deve adicionar um item no carrinho e finalizar a compra', () => {
+    it('deve adicionar um item no carrinho e finalizar a compra', () => {
         cy.contains('button','Add to cart').click()
         cy.get('.shopping_cart_link').click() //Entra no carrinho para verificar se o item está lá
         cy.contains('button', 'Checkout').click()

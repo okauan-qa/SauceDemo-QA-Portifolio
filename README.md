@@ -209,7 +209,7 @@ it('Deve preencher os dados pessoais no checkout', () => {
 
 | ID | Descrição | Usuário afetado | Severidade | Documentação |
 |---|---|---|---|---|
-| BUG-001 | Nem todos os produtos são adicionados ao carrinho | `problem_user` | Média | [Abrir relatório](docs/bugs/BUG-001-adicao-incompleta-ao-carrinho.md) |
+| BUG-001 | Nem todos os produtos são adicionados ao carrinho | `problem_user` | Média | [Abrir relatório](docs/bugs/BUG-001-add-itens-carrinho.md) |
 | BUG-002 | Ordenação de produtos de Z a A não é aplicada | `problem_user` | Média | [Abrir relatório](docs/bugs/BUG-002-ordenacao-z-a-nao-aplicada.md) |
 | BUG-003 | Ordenação do menor para o maior preço não é aplicada | `problem_user` | Média | [Abrir relatório](docs/bugs/BUG-003-ordenacao-menor-maior-preco-nao-aplicada.md) |
 | BUG-004 | Ordenação do maior para o menor preço não é aplicada | `problem_user` | Média | [Abrir relatório](docs/bugs/BUG-004-ordenacao-maior-menor-preco-nao-aplicada.md) |
@@ -242,11 +242,6 @@ Cada relatório de bug possui links diretos para screenshots e vídeos relaciona
 
 ## Próximas melhorias
 
-- Criar fixtures para centralizar credenciais e dados de checkout
-- Criar comandos customizados, como `cy.login()`
-- Aplicar Page Object Model para organizar seletores e ações reutilizáveis
-- Adicionar casos de teste negativos para checkout
-- Validar a ordem real dos nomes e preços após cada opção de ordenação
 - Configurar execução automática dos testes com GitHub Actions
 - Adicionar relatório automatizado de execução de testes
 
