@@ -81,7 +81,7 @@ describe('Testando página home', () =>{
       .should('not.exist')
     })
 
-    it.only('deve adicionar todos itens da lista no carrinho', () => {
+    it('deve adicionar todos itens da lista no carrinho', () => {
       cy.get('[data-test^="add-to-cart"]') //seleciona todos botões que tem add-to-cart
       .should('have.length.gt', 2) // deve ter mais de dois itens
       .click({ multiple: true }) // clica em multiplos
@@ -90,7 +90,7 @@ describe('Testando página home', () =>{
       .should('have.length', 0) //Resultado deveria ser 0, porém o cypress retornou que tem 3 botões com o status "Add to cart" BUG-001
     })
 
-      it('deve ordenar a lista de A a Z', () => {
+      it.only('deve ordenar a lista de A a Z', () => {
       cy.get('[data-test="product-sort-container"]')
       .select("za")
       .should('have.value', 'za') //Resultado deveria ordenar a lista para Z - A, porém permance A - Z BUG-002
