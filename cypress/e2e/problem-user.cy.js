@@ -95,12 +95,12 @@ describe('Testando página home', () =>{
       .select("za")
       .should('have.value', 'za') //Resultado deveria ordenar a lista para Z - A, porém permance A - Z BUG-002
     })
-    it.only('deve ordenar produtos do menor para o maior preço', () => {
+    it('deve ordenar produtos do menor para o maior preço', () => {
         cy.get('[data-test="product-sort-container"]')
           .select('lohi')
           .should('have.value', 'lohi') //Resultado deveria ordenar a lista do menor para o maior preço, porém permance A - Z BUG-003
     })
-    it('Deve ordenar produtos do maior para o menor preço', () => {
+    it.only('Deve ordenar produtos do maior para o menor preço', () => {
       cy.get('[data-test="product-sort-container"]')
       .select('hilo')
       .should('have.value', 'hilo') //Resultado deveria ordenar a lista do maior para o menor preço, porém permance A - Z BUG-004
