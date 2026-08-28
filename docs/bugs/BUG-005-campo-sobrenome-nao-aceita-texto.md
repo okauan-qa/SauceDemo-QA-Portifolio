@@ -86,5 +86,5 @@ O campo `Last Name` é obrigatório no fluxo de checkout. Como o usuário não c
 
 ## Evidências anexadas
 
-- [Screenshot da falha no Cypress](docs/bugs/evidences/images/problem-userBUG-005.png)
-- [Vídeo da reprodução do defeito](docs/bugs/evidences/videos/problem-userBUG-005.mp4)
+- [Screenshot da falha no Cypress](evidences/images/problem-userBUG-005.png)
+- [Vídeo da reprodução do defeito](evidences/videos/problem-userBUG-005.mp4) 

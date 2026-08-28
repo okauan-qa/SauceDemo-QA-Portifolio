@@ -80,5 +80,5 @@ O usuário não consegue ordenar os produtos por preço decrescente. Isso dificu
 
 ## Evidências anexadas
 
-- [Screenshot da falha no Cypress](docs/bugs/evidences/images/problem-userBUG-004.png)
-- [Vídeo da reprodução do defeito](docs/bugs/evidences/videos/problem-userBUG-004.mp4) 
+- [Screenshot da falha no Cypress](evidences/images/problem-userBUG-004.png)
+- [Vídeo da reprodução do defeito](evidences/videos/problem-userBUG-004.mp4) 
