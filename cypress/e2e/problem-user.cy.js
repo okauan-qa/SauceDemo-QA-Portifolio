@@ -100,12 +100,12 @@ describe('Testando página home', () =>{
           .select('lohi')
           .should('have.value', 'lohi') //Resultado deveria ordenar a lista do menor para o maior preço, porém permance A - Z BUG-003
     })
-    it.only('Deve ordenar produtos do maior para o menor preço', () => {
+    it('Deve ordenar produtos do maior para o menor preço', () => {
       cy.get('[data-test="product-sort-container"]')
       .select('hilo')
       .should('have.value', 'hilo') //Resultado deveria ordenar a lista do maior para o menor preço, porém permance A - Z BUG-004
     })
-    it('deve adicionar um item no carrinho e finalizar a compra', () => {
+    it.only('deve adicionar um item no carrinho e finalizar a compra', () => {
         cy.contains('button','Add to cart').click()
         cy.get('.shopping_cart_link').click() //Entra no carrinho para verificar se o item está lá
         cy.contains('button', 'Checkout').click()
