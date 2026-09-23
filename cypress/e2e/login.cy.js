@@ -139,7 +139,7 @@ describe('Testando página de Login', () => {
     cy.contains('h2', 'Thank you for your order!').should('have.text', 'Thank you for your order!')
     //Este caso será o BUG-001, pois não deveria realizar a compra e gerar o PDF, pois não tem nada no carrinho
   })
-  it.only('deve adicionar todos itens da lista no carrinho', () => {
+  it('deve adicionar todos itens da lista no carrinho', () => {
       cy.get('[data-test^="add-to-cart"]') //seleciona todos botões que tem add-to-cart
       .should('have.length.gt', 2) // deve ter mais de dois itens
       .click({ multiple: true }) // clica em multiplos
