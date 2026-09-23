@@ -4,7 +4,7 @@ module.exports = defineConfig({
   //video: true,
   //screenshotOnRunFailure: true,
   allowCypressEnv: false,
-
+  projectId: "9ngxcp",
   e2e: {
     defaultCommandTimeout: 1000,
     setupNodeEvents(on, config) {

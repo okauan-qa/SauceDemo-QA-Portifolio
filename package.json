@@ -6,7 +6,8 @@
   "scripts": {
     "cy:open": "cypress open",
     "cy:run": "cypress run",
-    "cy:evidencePUser": "cypress run --spec cypress/e2e/problem-user.cy.js"
+    "cy:evidencePUser": "cypress run --spec cypress/e2e/problem-user.cy.js",
+    "test:cloud": "cypress run --record"
   },
   "keywords": [],
   "author": "",
